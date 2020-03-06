@@ -7,6 +7,7 @@ public class UserRegistration
     String lastNamePattern="^[A-Z][a-zA-Z]{2,}$";
     String emailPattern="^[a-z]{3}((([.+_-]?+[a-zA-z-0-9])+([@]+[a-zA-Z0-9]+))|[@][a-zA-Z0-9]+)[.][a-z]{3}[.]?([a-z]{2,4}|[a-z]?)$";
     String numberPattern="^[+]?[0-9]{2}[ ][0-9]{10}";
+    String passwordPattern="^[a-zA-Z0-9]{8,}";
     public static void main(String[] args)
     {
         System.out.println("-----WELCOME TO USER REGISTRATION-----");
@@ -34,5 +35,11 @@ public class UserRegistration
     public boolean validateNumber(String number)
     {
         return (Pattern.matches(numberPattern,number));
+    }
+
+    //CHECK PATTERN FOR PASSWORD
+    public boolean validatePassword(String password)
+    {
+        return (Pattern.matches(passwordPattern,password));
     }
 }

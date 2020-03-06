@@ -14,7 +14,7 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK FIRST NAME IS VALID
     @Test
-    public void givenFirstName_WhenValid_thenReturn()
+    public void givenFirstName_whenValid_thenReturn()
     {
         String firstName="Rahul";
         boolean result=validate.validateFirstName(firstName);
@@ -23,7 +23,7 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK FIRST NAME IS INVALID
     @Test
-    public void givenFirstName_WhenInvalid_thenReturn()
+    public void givenFirstName_whenInvalid_thenReturn()
     {
         String firstName="rahul";
         boolean result=validate.validateFirstName(firstName);
@@ -32,7 +32,7 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK LAST NAME IS VALID
     @Test
-    public void givenLastName_WhenValid_thenReturn()
+    public void givenLastName_whenValid_thenReturn()
     {
         String lastName="Gidde";
         boolean result=validate.validateLastName(lastName);
@@ -41,7 +41,7 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK LAST NAME IS INVALID
     @Test
-    public void givenLastName_WhenInvalid_thenReturn()
+    public void givenLastName_whenInvalid_thenReturn()
     {
         String lastName="gidde";
         boolean result=validate.validateLastName(lastName);
@@ -50,7 +50,7 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK EMAIL ADDRESS IS VALID
     @Test
-    public void givenEmailAddress_WhenValid_thenReturn()
+    public void givenEmailAddress_whenValid_thenReturn()
     {
         for(int index=0; index<validEmail.length; index++)
         {
@@ -62,7 +62,7 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK EMAIL ADDRESS IS INVALID
     @Test
-    public void givenEmailAddress_WhenInvalid_thenReturn()
+    public void givenEmailAddress_whenInvalid_thenReturn()
     {
         for(int index=0; index<invalidEmail.length; index++)
         {
@@ -74,7 +74,7 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK MOBILE NUMBER IS VALID
     @Test
-    public void givenNumber_WhenValid_thenReturn()
+    public void givenNumber_whenValid_thenReturn()
     {
         String number="+91 9665382289";
         boolean result=validate.validateNumber(number);
@@ -83,10 +83,28 @@ public class UserRegistrationTest
 
     //TEST CASE TO CHECK MOBILE NUMBER IS INVALID
     @Test
-    public void givenNumber_WhenInValid_thenReturn()
+    public void givenNumber_whenInValid_thenReturn()
     {
         String number="9665382289";
         boolean result=validate.validateNumber(number);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE TO CHECK MINIMUM 8 CHARACTERS PASSWORD IS VALID
+    @Test
+    public void givenPasswordRule1_whenValid_thenReturn()
+    {
+        String password="afsdvgsaghb";
+        boolean result=validate.validatePassword(password);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE TO CHECK MINIMUM 8 CHARACTERS PASSWORD IS INVALID
+    @Test
+    public void givenPasswordRule1_whenInvalid_thenReturn()
+    {
+        String password="asda";
+        boolean result=validate.validatePassword(password);
         Assert.assertFalse(result);
     }
 }
