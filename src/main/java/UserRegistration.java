@@ -7,8 +7,7 @@ public class UserRegistration
     String lastNamePattern="^[A-Z][a-zA-Z]{2,}$";
     String emailPattern="^[a-z]{3}((([.+_-]?+[a-zA-z-0-9])+([@]+[a-zA-Z0-9]+))|[@][a-zA-Z0-9]+)[.][a-z]{3}[.]?([a-z]{2,4}|[a-z]?)$";
     String numberPattern="^[+]?[0-9]{2}[ ][0-9]{10}$";
-    //String passwordPattern="(([A-Z]+(?=[a-zA-Z0-9])|(?<=[a-zA-Z0-9])+[A-Z])|([0-9]+(?=[a-zA-Z0-9])|(?<=[a-zA-Z0-9]+[0-9]))){8,}$";
-    String passwordPattern="(?=.{8})(?=.*[A-Z])[a-zA-Z0-9]*(?=.*[0-9])[a-zA-Z0-9]*";
+    String passwordPattern="^(?=.{8})(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]*[^A-Za-z0-9][A-Za-z0-9]*$";
     public static void main(String[] args)
     {
         System.out.println("-----WELCOME TO USER REGISTRATION-----");

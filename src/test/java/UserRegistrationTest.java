@@ -94,7 +94,7 @@ public class UserRegistrationTest
     @Test
     public void givenPasswordRule1_whenValid_thenReturn()
     {
-        String password="Aafsdvgsaghb11";
+        String password="Aafsdvgsaghb1*1";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -112,7 +112,7 @@ public class UserRegistrationTest
     @Test
     public void givenPasswordRule2_whenValid_thenReturn()
     {
-        String password="adadaAaxaa4";
+        String password="adadaAaxaa$4";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -130,7 +130,7 @@ public class UserRegistrationTest
     @Test
     public void givenPasswordRule3_whenValid_thenReturn()
     {
-        String password="adadaAaxa11a2";
+        String password="adadaAaxa11a#2";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -140,6 +140,24 @@ public class UserRegistrationTest
     public void givenPasswordRule3_whenInvalid_thenReturn()
     {
         String password="asdasdfafa";
+        boolean result=validate.validatePassword(password);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE SPECIAL CHARACTER
+    @Test
+    public void givenPasswordRule4_whenValid_thenReturn()
+    {
+        String password="adadaAaxa11a2@";
+        boolean result=validate.validatePassword(password);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE SPECIAL CHARACTER
+    @Test
+    public void givenPasswordRule4_whenInvalid_thenReturn()
+    {
+        String password="asdasdfafa4A";
         boolean result=validate.validatePassword(password);
         Assert.assertFalse(result);
     }
