@@ -94,7 +94,7 @@ public class UserRegistrationTest
     @Test
     public void givenPasswordRule1_whenValid_thenReturn()
     {
-        String password="Aafsdvgsaghb";
+        String password="Aafsdvgsaghb11";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -112,7 +112,7 @@ public class UserRegistrationTest
     @Test
     public void givenPasswordRule2_whenValid_thenReturn()
     {
-        String password="adadaAaxaa";
+        String password="adadaAaxaa4";
         boolean result=validate.validatePassword(password);
         Assert.assertTrue(result);
     }
@@ -120,6 +120,24 @@ public class UserRegistrationTest
     //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE UPPER CASE CHARACTER
     @Test
     public void givenPasswordRule2_whenInvalid_thenReturn()
+    {
+        String password="asdasdfafa";
+        boolean result=validate.validatePassword(password);
+        Assert.assertFalse(result);
+    }
+
+    //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE NUMERIC NUMBER
+    @Test
+    public void givenPasswordRule3_whenValid_thenReturn()
+    {
+        String password="adadaAaxa11a2";
+        boolean result=validate.validatePassword(password);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE FOR VALID PASSWORD FOR AT LEAST ONE NUMERIC
+    @Test
+    public void givenPasswordRule3_whenInvalid_thenReturn()
     {
         String password="asdasdfafa";
         boolean result=validate.validatePassword(password);
