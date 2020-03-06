@@ -71,4 +71,22 @@ public class UserRegistrationTest
             Assert.assertFalse(result);
         }
     }
+
+    //TEST CASE TO CHECK MOBILE NUMBER IS VALID
+    @Test
+    public void givenNumber_WhenValid_thenReturn()
+    {
+        String number="+91 9665382289";
+        boolean result=validate.validateNumber(number);
+        Assert.assertTrue(result);
+    }
+
+    //TEST CASE TO CHECK MOBILE NUMBER IS INVALID
+    @Test
+    public void givenNumber_WhenInValid_thenReturn()
+    {
+        String number="9665382289";
+        boolean result=validate.validateNumber(number);
+        Assert.assertFalse(result);
+    }
 }
